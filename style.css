@@ -1,0 +1,351 @@
+/* забираємо відступ збоку */
+body {
+    margin: 0;
+    /* міняємо шрифт */
+    font-family: "raleway", "sans-serif" ,  "Helvetica", "Arial";
+    height: 1000px;        /* Створення Повзунка */
+}
+
+
+
+/* забираємо відступ зверху */
+ul {
+    margin: 0;
+    padding-inline-start: 10px;
+}
+
+
+
+/* забираємо нумерацію */
+ul {
+    list-style-type: none;
+}
+
+
+
+
+
+/* ЗаТЕМНЕННЯ КАРТИНКИ */
+.header::after{
+    content: "";
+    background: #0c3632;
+    position: absolute;
+    opacity: .85;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all .25s ease;
+}
+
+
+
+
+
+
+
+/* робимо чорний блок */
+.header {
+    /* height: 100vh; КОЛІР НА ВЕСЬ ЕКРАН */
+    /*  щоб забрати лишніх 40 px внизу */
+    height: calc(100vh - 40px);
+    padding: 20px;
+     /* вставляємо посилання картинки */
+    background-image: url("https://opencages.com.ua/_nuxt/img/homepage.0151b74.jpg.webp") ;
+    background-repeat: no-repeat;    /*щоб картинка не повторювалась, якщо замаленька */
+    
+    background-attachment: fixed;
+    /* поміщення в один ряд */
+    /* розташовуємо текст по центрі блока */
+    justify-content: space-between;   /*відступ від лого до слів */
+    background-size: cover;   /*Картинка на весь екран, ВИПРАВЛЕНО */ 
+    background-position: 50%;
+/* відступ блоку з текстом */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+.nav {
+    position: absolute;/*    ЩОБ ВЕРХНЯ ПАНЕЛЬ БУЛА ПЕРЕД ФОНом */
+    z-index: 1;      /*    ЩОБ ВЕРХНЯ ПАНЕЛЬ БУЛА ПЕРЕД ФОНом */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100- 40px)
+}
+
+
+
+
+
+.logo-container {
+    line-height: 1.5
+}
+
+
+
+
+
+/* НАДАЄМО СТИЛЬ ЛОГОТИПУ */
+.logo-img {
+    height: 40px;
+    
+}
+
+
+
+.logo-container {
+    display: inline-block;
+    
+}
+
+
+
+
+/* .logo-link {
+    display: flex;
+    height: 100%;
+    align-items: center;
+} */
+
+
+/* відступ між серцем */
+.heart-icon {
+    margin-right: 14px;
+}
+
+
+
+/* забираємо підкреслення посилання */
+a {
+    text-decoration: none;
+    color: inherit;
+    /* inherit - знищення права */
+}
+
+
+
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+
+/* розташовуємо елементи в один ряд */
+.nav-list li {
+    padding: 0 10px;  /*відступи на панелі */
+    color: white;
+    font-weight: bold;/* жирність шрифта */
+    font-size: 14px;/* розмір шрифта */
+}
+
+.nav-list li:last-of-type{
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 0 10px;
+    background-color: #dd3d53;
+    border-radius: 3px;
+    font-size: 12px; 
+    transition: all .25s ease;
+}
+
+
+/* редагування слова Підтримати */
+.nav-list li:nth-child(9) a {
+    height: 30px;
+    padding: 0 10px;
+    display: flex;
+    line-height: 30px;
+    border-radius: 3px; /* заукруглення кнопки */
+    background-color: #dd3d53;
+    transition: all .25s ease;  /* плавна зміна кольору при натисканні на кнопку */
+}
+
+
+
+.nav-list li:last-of-type a svg{
+    width: 1em;
+}
+
+
+
+.nav-list li:last-of-type a:hover { /* при наведені КОЛІР КНОПКИ ЗМІНЮЄТЬСЯ */
+    background-color: #c9233a;
+}
+
+
+
+
+
+.nav-list-link {
+    position: relative;
+    transition: all .25s ease;
+    
+}
+
+
+
+
+/* при натисканні на слово відбувається підкреслення */
+
+.nav-list-link::after{
+    content: "";
+    background: #17baaa;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .25s ease;
+    
+}
+
+
+/* Щоб лінії при наведені мали такий колір */
+.nav-list-link:hover {
+    color: #17baaa
+}
+
+
+.nav-list-link:hover::after {
+    transform: scaleX(1);
+}
+    
+    
+    
+
+
+
+/*  створення меню для телефона */
+
+
+/* щоб не видно бургер кнопки      це те саме але скорочене */
+.nav-toggle {
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+
+.nav-toggle {
+    display: none;
+
+}
+
+
+
+.burger-icon {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -0.125em;
+    cursor: pointer;    /* при наведені з`являється рука */
+}
+
+
+/* якщо більше ніж 992px кнопка зникає 
+@media screen and (min-width: 992px) {
+    .nav-toggle {
+        display: none;
+    }
+} */
+
+
+
+
+
+
+
+
+    
+
+
+/* стиль до тексту та кнопки */
+.header-content {
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+
+.header-content-title {
+    font-size: 56px;
+    color: white;
+    line-height: 84px;    /* відстань лінійок */
+
+}
+
+
+
+
+.header-content-title-green {
+    color: #17baaa;
+}
+
+
+/* стиль кнопки */
+.header-content-btn {
+    display: block;
+    background: #17baaa;
+    color: #fff;
+    align-items: center;
+    border: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: 700;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 40px;
+    outline: none;
+    padding: 0 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .25s ease;
+}
+
+
+
+
+
+.hrader-content-btn:hover {
+    background-color: #129185;
+}
+
+
+
+
+
+/* це те саме але скорочене */
+/* панель зникає */
+@media screen and (max-width: 992px) {
+    .nav-list {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
